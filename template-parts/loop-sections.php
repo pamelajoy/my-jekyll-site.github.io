@@ -12,27 +12,27 @@ if ( have_rows( 'sections' ) ):
   // loop through the rows of data
   while ( have_rows( 'sections' ) ) : the_row();
 
-    // switch ( get_row_layout() ) {
+    switch ( get_row_layout() ) {
 
-    //   case 'homepage_header' :
+      case 'homepage_header' :
 
-    //     $image = get_sub_field( 'background_image' );
-    //     $headline = get_sub_field( 'page_headline' );
-    //     $bg_overlay = get_sub_field('bg_overlay');
+        $image = get_sub_field( 'background_image' );
+        $headline = get_sub_field( 'page_headline' );
+        $bg_overlay = get_sub_field('bg_overlay');
 
-    //     include locate_template('/template-parts/template-homepage_header.php');
+        include locate_template('/template-parts/template-homepage_header.php');
 
-    //     break;
+        break;
 
-    //   case 'header' :
+      case 'header' :
 
-    //     $image = get_sub_field('background_image');
-    //     $tab_color = get_sub_field('tab_color');
+        $image = get_sub_field('background_image');
+        $tab_color = get_sub_field('tab_color');
 
-    //     include locate_template('/template-parts/template-header.php');
+        include locate_template('/template-parts/template-header.php');
 
-    //     break;
-    // }
+        break;
+    }
 
   endwhile;
 else :

@@ -18,3 +18,12 @@ $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
+
+$dark-gray: #333333;
+$medium-gray: #606060;
+$purple: #706580;
+$nav-blue: #79c4db;
+
+.nav-bg{
+	background-color: $nav-blue;
+}

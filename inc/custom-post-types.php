@@ -12,7 +12,7 @@ function tq_theme_prefix_create_post_type() {
       'public' => true,
       'has_archive' => true,
       'rewrite' => array('slug' => 'testimonials'),
-      'menu_icon'	=> 'dashicons-testimonial',
+      'menu_icon'	=> 'dashicons-editor-quote',
     )
   );
   // Custom Post Type - Products
@@ -26,6 +26,11 @@ function tq_theme_prefix_create_post_type() {
       'has_archive' => true,
       'rewrite' => array('slug' => 'products'),
       'menu_icon' => 'dashicons-store',
+      'supports' => array( 
+        'title',
+        'editor',
+        'thumbnail',
+      ),
     )
   );
 
@@ -36,6 +41,19 @@ function tq_theme_prefix_create_post_type() {
         'label' => __( 'Product Lines' ),
         'rewrite' => array( 'slug' => 'product-line' ),
         'hierarchical' => true,
+    )
+  );
+  // Custom Post Type - Testimonials
+  register_post_type( 'faqs',
+    array(
+      'labels' => array(
+        'name' => __( 'FAQs' ),
+        'singular_name' => __( 'FAQ' )
+      ),
+      'public' => true,
+      'has_archive' => true,
+      'rewrite' => array('slug' => 'faqs'),
+      'menu_icon' => 'dashicons-editor-help',
     )
   );
 

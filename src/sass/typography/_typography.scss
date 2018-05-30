@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+
 body,
 button,
 input,
@@ -13,3 +15,13 @@ textarea {
 @import "headings";
 
 @import "copy";
+
+.dark-gray-text{
+	color: $dark-gray;
+}
+.medium-gray-text{
+	color: $medium-gray;
+}
+.purple-text{
+	color: $purple;
+}
