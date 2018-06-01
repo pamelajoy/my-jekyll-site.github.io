@@ -41,22 +41,6 @@ if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page();	
 }
 
-// THIS WILL MAKE THE TAXONOMY CHOSEN IN THE FIELD ABOVE BE ADDED TO THE ARGS FOR THIS QUERY
-// function my_relationship_query( $args, $field, $post_id ) {
-
-//   $args['tax_query'] = array(
-//     array(
-//       'taxonomy' => 'people',
-//       'field'    => 'slug',
-//     ),
-//   );
-//   // return
-//   return $args;
-    
-// }
-
-// // filter for every field
-// add_filter('acf/fields/relationship/query/name=slider', 'my_relationship_query', 10, 3);
 
 // This allows you to only view images you added to the media library, I plan to repurpose this using the category
 // add_filter( 'ajax_query_attachments_args', array( $this, 'load_media_library_by_category_access' ), 10, 1 );

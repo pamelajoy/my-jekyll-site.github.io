@@ -24,12 +24,11 @@
 
   <header id="masthead" class="site-header">
 
-    <nav id="site-navigation" class="main-navigation navbar fixed-top bg-dark-translucent navbar-expand-lg p-0">
-      <div class="container d-flex mt-5">
+    <nav id="site-navigation" class="main-navigation navbar navbar-expand-lg">
+      <div class="container d-flex">
         
-        <div class="site-branding">
+        <div class="site-branding m-5">
           <div class="d-flex align-items-center justify-content-start">
-            <div class="p-3 p-lg-3">
             	<div style="width: 100px;">
               <?php
                 // check to see if the logo exists and add it to the page
@@ -46,10 +45,9 @@
                 endif; 
               ?>
             	</div>
-            </div>
           </div>
         </div><!-- .site-branding -->
-        <div class="d-flex justify-content-end align-items-center p-3 p-lg-3 nav-bg">
+        <div class="d-flex justify-content-end align-items-center nav-bg">
             <button class="navbar-toggler d-flex justify-content-end d-lg-none p-3" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
               <i class="fa fa-bars white-text"></i>
             </button><!-- .navbar-toggler -->
@@ -58,7 +56,7 @@
         <?php
           wp_nav_menu( array(
             'container'       => 'div',
-            'container_class' => 'collapse navbar-collapse d-lg-flex nav-bg',
+            'container_class' => 'collapse navbar-collapse d-lg-flex nav-bg m-5',
             'container_id'    => 'menu',
             'depth'           => 2,
             'fallback_cb'     => 'bs4navwalker::fallback',
