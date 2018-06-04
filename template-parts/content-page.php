@@ -11,10 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-
-	<?php tq_theme_prefix_post_thumbnail(); ?>
-
-	<div class="entry-content">
+	<div class="entry-content m-0">
 		<?php get_template_part( 'template-parts/loop', 'modules' ); ?>
 	</div><!-- .entry-content -->
 

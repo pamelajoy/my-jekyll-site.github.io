@@ -20,3 +20,17 @@ input[type="submit"] {
 		border-color: $color__border-button-focus;
 	}
 }
+
+
+
+.btn{
+	background: $purple;
+	border-radius: 0;
+	border: 1px solid $purple;
+	color: white !important;
+	&:hover{
+		background: transparent;
+		border: 1px solid $purple;
+		color: $purple !important;
+	}
+}

@@ -1,5 +1,11 @@
 <?php
 
+if($product_line->slug == 'sparkle'){
+  $btn_class = 'sparkle-white-btn';
+  $text_class = 'white-text';
+} elseif($product_line->slug == 'ucreate'){
+  $btn_class = 'ucreate-pink-btn';
+}
 
 ?>
 
@@ -13,46 +19,21 @@
       style="background: linear-gradient( rgba(255,255,255,0), <?php echo $color; ?> 15%, <?php echo $color; ?> 75%, rgba(255,255,255,0) );"
     <?php endif; ?> 
   >
-    <div class="container my-5">
+    <div class="container mt-5">
       <div class="row">
-        <div class="col-5">
+        <div class="col-md-5">
           <?php 
             $logo = get_field( 'logo', $product_line); 
-            echo wp_get_attachment_image($logo, 'medium', '', array('class' => 'img-fluid product-logo') );
+            echo wp_get_attachment_image($logo, 'medium', '', array('class' => 'img-fluid product-logo mb-4 mb-md-0') );
           ?>
         </div>
-        <div class="col-7">
-          blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
+        <div class="offset-md-1 col-md-5">
+          <p><?php echo $text; ?></p>
+          <a class="btn" href="<?php echo $product_line->permalink; ?>">View <?php echo $product_line->name; ?> products</a>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="slider container">
-  <?php 
-
-    if( $slider ): ?>
-        <div class="variable-width">
-        <?php foreach( $slider as $post): // variable must be called $post (IMPORTANT) ?>
-            <?php setup_postdata($post); ?>
-            
-                <a href="<?php the_permalink(); ?>">
-                  <?php echo the_post_thumbnail('medium', array('class' => 'img-fluid')); ?>
-                </a>
-            
-        <?php endforeach; ?>
-        </div>
-        <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-    <?php endif; ?>
-</div>
-<script>
-  $('.variable-width').slick({
-    infinite: false,
-    speed: 300,
-    slidesToShow: 1,
-    centerMode: true,
-    variableWidth: true,
-    initialSlide: 1,
-  });
-</script>
+<?php include locate_template('/template-parts/template-slider.php'); ?>

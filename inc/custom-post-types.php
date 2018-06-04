@@ -41,6 +41,7 @@ function tq_theme_prefix_create_post_type() {
         'label' => __( 'Product Lines' ),
         'rewrite' => array( 'slug' => 'product-line' ),
         'hierarchical' => true,
+        'show_in_nav_menus' => true,
     )
   );
   // Custom Post Type - Testimonials

@@ -21,6 +21,7 @@ $color__border-abbr: #666;
 
 $dark-gray: #333333;
 $medium-gray: #606060;
+$light-gray: #efefef;
 $purple: #706580;
 $nav-blue: #79c4db;
 
@@ -30,4 +31,8 @@ $nav-blue: #79c4db;
 
 .medium-gray-bg{
   background-color: $medium-gray;
+}
+
+.light-gray-bg{
+	background-color: $light-gray;
 }

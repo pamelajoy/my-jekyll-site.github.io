@@ -24,12 +24,13 @@
 
   <header id="masthead" class="site-header">
 
-    <nav id="site-navigation" class="main-navigation navbar navbar-expand-lg">
-      <div class="container d-flex">
+    <nav id="site-navigation" class="fixed-top main-navigation navbar navbar-expand-lg p-0">
+      <div class="d-flex">
         
-        <div class="site-branding m-5">
-          <div class="d-flex align-items-center justify-content-start">
-            	<div style="width: 100px;">
+        
+        <div class="site-branding m-5 align-self-start justify-self-start">
+          <div class="">
+            	<div>
               <?php
                 // check to see if the logo exists and add it to the page
                 if ( has_custom_logo() ) :
@@ -47,7 +48,7 @@
             	</div>
           </div>
         </div><!-- .site-branding -->
-        <div class="d-flex justify-content-end align-items-center nav-bg">
+        <div class="d-flex m-5 align-self-start justify-self-end nav-bg">
             <button class="navbar-toggler d-flex justify-content-end d-lg-none p-3" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
               <i class="fa fa-bars white-text"></i>
             </button><!-- .navbar-toggler -->
@@ -56,7 +57,7 @@
         <?php
           wp_nav_menu( array(
             'container'       => 'div',
-            'container_class' => 'collapse navbar-collapse d-lg-flex nav-bg m-5',
+            'container_class' => 'collapse navbar-collapse d-lg-flex nav-bg align-self-end w-100',
             'container_id'    => 'menu',
             'depth'           => 2,
             'fallback_cb'     => 'bs4navwalker::fallback',

@@ -9,18 +9,21 @@ add_filter('tq_include_bootstrap', function($value){
 /**
  * Enqueue scripts and styles.
  */
-if (! function_exists('tq_custom_script_init') ){  
-  function tq_custom_script_init(){
+function tq_custom_script_init(){
 
-  	// Compiled and minified javascript
-  	wp_register_script( 'scripts', get_stylesheet_directory_uri().'/dist/scripts.min.js', array( 'jquery' ), '', true );
-  	wp_enqueue_script( 'scripts' );
+	// Slick Slider JS
+	wp_register_script( 'slick-slider', get_stylesheet_directory_uri().'/dist/slick.min.js', array( 'jquery' ), '', true );
+	wp_enqueue_script( 'slick-slider' );
 
-  	// Compiled and minified style sheet
-  	wp_register_style( 'style', get_stylesheet_directory_uri().'/dist/style.min.css' );
-  	wp_enqueue_style( 'style' );
+	// Compiled and minified javascript
+	wp_register_script( 'scripts', get_stylesheet_directory_uri().'/dist/scripts.min.js', array( 'jquery' ), '', true );
+	wp_enqueue_script( 'scripts' );
 
-  }
+	// Compiled and minified style sheet
+	wp_register_style( 'style', get_stylesheet_directory_uri().'/dist/style.min.css' );
+	wp_enqueue_style( 'style' );
+
+
 }
 add_action( 'wp_enqueue_scripts', 'tq_custom_script_init' );
 

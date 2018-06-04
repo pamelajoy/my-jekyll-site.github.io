@@ -28,9 +28,12 @@
 
 .product-line-grid{
   display: grid;
-  grid-template-rows: auto 10rem auto;
+  grid-template-rows: auto 5rem auto;
   grid-template-columns: 100%;
 
+  @media (min-width: 768px) {
+    grid-template-rows: auto 10rem auto;
+  }
   .featured-image{
     grid-row-start: 1;
     grid-row-end: span 2;
@@ -40,23 +43,76 @@
     grid-row-start: 2;
     grid-row-end: 4;
     grid-column: 1;
-    padding-top: 10rem;
-    padding-bottom: 10rem;
-
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    
+    @media (min-width: 768px) {
+      padding-top: 10rem;
+      padding-bottom: 10rem;
+    }
   }
-
-
 }
 
+
+// SLIDER
 .variable-width{
-  height: 30rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.slick-list{
+  order: 1;
+  flex: 0 1 100%;
+}
+.slick-next, .slick-prev{
+  display: block;
+  order: 2;
+  color: $dark-gray;
+  font-size: 1rem;
+  flex: 1 0 50%;
+  position: relative;
+  left: auto;
+  right: auto;
+  top: auto;
+  transform: none;
+  transition: 200ms;
+
+  &:before,&:after{
+    content: '';
+    color: $purple;
+    margin: 0 1rem;
+    opacity: .75;
+
+
+    @media (min-width: 768px) {
+      margin: 0 2rem;
+    }
+  }
+  &:focus,&:hover{
+    color: $purple;
+
+    &:before,&:after{
+      opacity: 1;
+    }
+  }
 }
 
-button.slick-arrow{
-  border: none;
-  background: transparent;
+.slick-next{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .slick-prev{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.slick-slide img{
+  height: 12rem;
+  width: auto;
+  @media (min-width: 768px) {
+    height: 26rem;
+  }
 }

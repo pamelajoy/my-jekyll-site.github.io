@@ -1,5 +1,6 @@
 @charset "UTF-8";
 /* Slider */
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 @import url("https://fonts.googleapis.com/css?family=Abril+Fatface");
 .slick-slider {
   position: relative;
@@ -250,6 +251,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 .medium-gray-bg {
   background-color: #606060; }
+
+.light-gray-bg {
+  background-color: #efefef; }
 
 /*--------------------------------------------------------------
 # Normalize
@@ -578,6 +582,16 @@ input[type="submit"] {
   input[type="submit"]:focus {
     border-color: #aaa #bbb #bbb; }
 
+.btn {
+  background: #706580;
+  border-radius: 0;
+  border: 1px solid #706580;
+  color: white !important; }
+  .btn:hover {
+    background: transparent;
+    border: 1px solid #706580;
+    color: #706580 !important; }
+
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -770,8 +784,11 @@ a {
 
 .product-line-grid {
   display: grid;
-  grid-template-rows: auto 10rem auto;
+  grid-template-rows: auto 5rem auto;
   grid-template-columns: 100%; }
+  @media (min-width: 768px) {
+    .product-line-grid {
+      grid-template-rows: auto 10rem auto; } }
   .product-line-grid .featured-image {
     grid-row-start: 1;
     grid-row-end: span 2;
@@ -780,15 +797,63 @@ a {
     grid-row-start: 2;
     grid-row-end: 4;
     grid-column: 1;
-    padding-top: 10rem;
-    padding-bottom: 10rem; }
+    padding-top: 5rem;
+    padding-bottom: 5rem; }
+    @media (min-width: 768px) {
+      .product-line-grid .intro {
+        padding-top: 10rem;
+        padding-bottom: 10rem; } }
 
 .variable-width {
-  height: 30rem; }
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
 
-button.slick-arrow {
-  border: none;
-  background: transparent; }
+.slick-list {
+  order: 1;
+  flex: 0 1 100%; }
+
+.slick-next, .slick-prev {
+  display: block;
+  order: 2;
+  color: #333333;
+  font-size: 1rem;
+  flex: 1 0 50%;
+  position: relative;
+  left: auto;
+  right: auto;
+  top: auto;
+  transform: none;
+  transition: 200ms; }
+  .slick-next:before, .slick-next:after, .slick-prev:before, .slick-prev:after {
+    content: '';
+    color: #706580;
+    margin: 0 1rem;
+    opacity: .75; }
+    @media (min-width: 768px) {
+      .slick-next:before, .slick-next:after, .slick-prev:before, .slick-prev:after {
+        margin: 0 2rem; } }
+  .slick-next:focus, .slick-next:hover, .slick-prev:focus, .slick-prev:hover {
+    color: #706580; }
+    .slick-next:focus:before, .slick-next:focus:after, .slick-next:hover:before, .slick-next:hover:after, .slick-prev:focus:before, .slick-prev:focus:after, .slick-prev:hover:before, .slick-prev:hover:after {
+      opacity: 1; }
+
+.slick-next {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.slick-prev {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.slick-slide img {
+  height: 12rem;
+  width: auto; }
+  @media (min-width: 768px) {
+    .slick-slide img {
+      height: 26rem; } }
 
 /*--------------------------------------------------------------
 ## Comments
@@ -879,5 +944,11 @@ object {
 
 .gallery-caption {
   display: block; }
+
+button {
+  font-family: 'Montserrat', sans-serif; }
+
+* {
+  font-family: 'Montserrat', sans-serif; }
 
 /*# sourceMappingURL=build-style.css.map */

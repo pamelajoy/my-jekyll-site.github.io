@@ -39,15 +39,14 @@ jQuery(document).ready(function($) {
       }
     }
   });
-
+// http://kenwheeler.github.io/slick/
   $('.variable-width').slick({
-    infinite: false,
+    infinite: true,
     speed: 300,
     slidesToShow: 1,
     centerMode: true,
     variableWidth: true,
     initialSlide: 1,
   });
-
 
 });
