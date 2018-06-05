@@ -49,4 +49,35 @@ jQuery(document).ready(function($) {
     initialSlide: 1,
   });
 
+  var lastScrollTop = 0;
+  var stickyTop = $('#menu').offset().top;
+  var unstickTop = $("#header").offset().top + $("#header").height();
+  console.log(unstickTop);
+
+  $(window).on( 'scroll', function(){
+    var st = $(this).scrollTop();
+    //If scrolling down check if #menu is at top and then stick
+     if (st > lastScrollTop){
+      // down scroll code
+        if ($(window).scrollTop() >= stickyTop) {
+            $('#menu').css({"position": "fixed", "top": "0px", "right": "0px", "width": "100%", "z-index": "100", "padding-left": "30px"});
+        } else {
+            // $('#menu').css({"position": "relative", "top": "0px", "right": "0px", "width": "100%", "padding-left": "0"});
+            return;
+        }
+     } 
+     //If scrolling up check if the bottom of the header is at the top and then unstick
+     else {
+      console.log('up');
+      //upscroll code
+      if ($(window).scrollTop() <= unstickTop) {
+            $('#menu').css({"position": "static", "top": "auto", "right": "auto", "padding-left": "0"});
+        } else {
+          return;
+        }
+     }
+     lastScrollTop = st;
+      
+  });
+    
 });

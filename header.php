@@ -22,14 +22,11 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 
-  <header id="masthead" class="site-header">
+  <header id="masthead" class="site-header position-absolute w-100">
 
-    <nav id="site-navigation" class="fixed-top main-navigation navbar navbar-expand-lg p-0">
-      <div class="d-flex">
-        
-        
-        <div class="site-branding m-5 align-self-start justify-self-start">
-          <div class="">
+    <nav id="site-navigation" class="main-navigation navbar navbar-expand-lg p-0" style="overflow:hidden;">
+        <div class="fixed-top site-branding align-self-start pr-5 pt-3">
+          <div class="container">
             	<div>
               <?php
                 // check to see if the logo exists and add it to the page
@@ -48,30 +45,33 @@
             	</div>
           </div>
         </div><!-- .site-branding -->
-        <div class="d-flex m-5 align-self-start justify-self-end nav-bg">
+
+        <div class="fixed-top d-lg-none d-flex m-5 align-self-start justify-self-end nav-bg">
             <button class="navbar-toggler d-flex justify-content-end d-lg-none p-3" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
               <i class="fa fa-bars white-text"></i>
             </button><!-- .navbar-toggler -->
         </div>
-
+        <div class="container" style="margin-top:90vh">
         <?php
           wp_nav_menu( array(
             'container'       => 'div',
-            'container_class' => 'collapse navbar-collapse d-lg-flex nav-bg align-self-end w-100',
+            'container_class' => 'collapse navbar-collapse d-lg-flex align-self-end row',
             'container_id'    => 'menu',
             'depth'           => 2,
             'fallback_cb'     => 'bs4navwalker::fallback',
             'menu'            => 'primary',
-            'menu_class'      => 'navbar-nav justify-content-around text-center mx-auto p-0',
+            'menu_class'      => 'navbar-nav col-8 ml-auto nav-bg pl-5 align-items-center',
             'menu_id'         => false,
             'theme_location'  => 'menu-1',
             'walker'          => new bs4navwalker()
           ) );
         ?>
+      </div>
         
         
       </div>
     </nav><!-- #site-navigation -->
+
   </header><!-- #masthead -->
   
   

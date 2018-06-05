@@ -1,3 +1,20 @@
 .custom-logo{
 	width: 100%;
 }
+
+#menu:after {
+    content: '';
+    height: 10vh;
+    width: 100%;
+    margin-right: -100%;
+    background: #79c4db;
+}
+
+#menu .navbar-nav{
+	height: 10vh;
+}
+
+.menu-item a{
+	color: white;
+	text-transform: uppercase;;
+}
