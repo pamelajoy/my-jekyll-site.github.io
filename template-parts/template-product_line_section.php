@@ -28,8 +28,12 @@ if($product_line->slug == 'sparkle'){
           ?>
         </div>
         <div class="offset-md-1 col-md-5">
-          <p><?php echo $text; ?></p>
-          <a class="btn" href="<?php echo $product_line->permalink; ?>">View <?php echo $product_line->name; ?> products</a>
+          <p class="p mb-5"><?php echo $text; ?></p>
+          <?php
+            $text = 'View '.$product_line->name.' products';
+            $url = $product_line->permalink;
+            include locate_template('/template-parts/template-button.php');
+          ?>
         </div>
       </div>
     </div>

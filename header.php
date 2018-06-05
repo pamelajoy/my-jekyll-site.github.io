@@ -60,7 +60,7 @@
             'depth'           => 2,
             'fallback_cb'     => 'bs4navwalker::fallback',
             'menu'            => 'primary',
-            'menu_class'      => 'navbar-nav col-8 ml-auto nav-bg pl-5 align-items-center',
+            'menu_class'      => 'navbar-nav col-8 ml-auto nav-bg align-items-center justify-content-around',
             'menu_id'         => false,
             'theme_location'  => 'menu-1',
             'walker'          => new bs4navwalker()

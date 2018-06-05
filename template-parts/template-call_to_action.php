@@ -1,5 +1,8 @@
 <?php
 
+$text = $button['title'];
+$url = $button['url'];
+$target = $linkArray['target'];
 ?>
 
 <div class="py-5 light-gray-bg">

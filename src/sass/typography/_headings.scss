@@ -30,9 +30,29 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
-.h2, .the-content h2 {
+.h1, .content h1{
+  @include typography(
+    $line-height: 1.25,
+    $size: 3.25rem,
+    $weight: 300,
+  );
+
+  @media (min-width: 576px){
+    font-size: 3.5rem;
+  }
+  @media (min-width: 768px) {
+    font-size: 3.75rem;
+  }
+  @media (min-width: 992px) {
+    font-size: 4rem;
+  }
+  @media (min-width: 1200px) {
+    font-size: 4.125rem;
+  }
+}
+.h2, .content h2 {
 	@include typography(
-    $line-height: 1.05,
+    $line-height: 1.25,
     $size: 2.25rem,
     $weight: 300,
 	);
@@ -48,5 +68,38 @@ h1, h2, h3, h4, h5, h6 {
   }
   @media (min-width: 1200px) {
     font-size: 3.125rem;
+  }
+}
+.h3, .content h3 {
+  @include typography(
+    $line-height: 1.25,
+    $size: 1.25rem,
+    $weight: 300,
+  );
+
+  @media (min-width: 576px){
+    font-size: 1.5rem;
+  }
+  @media (min-width: 768px) {
+    font-size: 1.75rem;
+  }
+  @media (min-width: 992px) {
+    font-size: 2rem;
+  }
+  @media (min-width: 1200px) {
+    font-size: 2.125rem;
+  }
+}
+
+.h4, .content h4 {
+  @include typography(
+    $line-height: 1.25,
+    $size: 1rem,
+    $weight: 300,
+  );
+  text-transform: uppercase;
+
+  @media (min-width: 768px) {
+    font-size: 1.125rem;
   }
 }

@@ -6,8 +6,10 @@
   <div class="row">
     <div class="col-md-4">
     	<h2 class="h2 purple-text pb-3"><?php echo $headline; ?></h1>
-    	<div class="row"><div class="col-3"><hr></div></div>
+    	<hr align="left">
    	</div>
-    <div class="offset-md-1 col-md-6"><?php echo $text; ?></div>
+    <div class="offset-md-1 col-md-6">
+    	<p class="p"><?php echo $text; ?></p>
+    </div>
   </div>
 </div>
