@@ -25,6 +25,7 @@ if($product_line->slug == 'sparkle'){
           <?php 
             $logo = get_field( 'logo', $product_line); 
             echo wp_get_attachment_image($logo, 'medium', '', array('class' => 'img-fluid product-logo mb-4 mb-md-0') );
+            
           ?>
         </div>
         <div class="offset-md-1 col-md-5">
