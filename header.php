@@ -8,6 +8,52 @@
  *
  * @package torque
  */
+
+$terms = get_terms('product-line');
+$print_html = '';
+$print_css = '';
+foreach($terms as $term):
+  $font = get_field('font', $term);
+  if ($font){
+    $html = $font['embed_font'];
+    $css = $font['specify_in_css'];
+    $css = '.'.$term->slug.'-font{'.$css.'}'."\r\n";
+    $print_html .= $html;
+    $print_css .= $css;
+  }
+  $color = get_field('color', $term);
+  if ($color){
+    //create text class
+    $css = '.'.$term->slug.'-color-text{color:'.$color.'}'."\r\n";
+    $print_css .= $css;
+  }
+  if ($color){
+    //create button classes
+    $css = 
+      '.'.$term->slug.'-color-btn{
+        background-color:'.$color.';
+        border-color:'.$color.';
+        color:white;
+      }'."\r\n".
+      '.'.$term->slug.'-color-btn:hover{
+        background-color:transparent;
+        color:'.$color.';
+      }'."\r\n";
+    $css .= 
+      '.'.$term->slug.'-white-btn{
+        background-color:white;
+        border-color:white;
+        color:'.$color.'
+      }'."\r\n".
+      '.'.$term->slug.'-white-btn:hover{
+        background-color:transparent;
+        color:white;
+      }'."\r\n";
+    $print_css .= $css;
+  }
+  
+endforeach;
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -15,11 +61,22 @@
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="profile" href="http://gmpg.org/xfn/11">
-
   <?php wp_head(); ?>
+  <?php 
+    if (isset($print_html)){
+      echo $print_html;
+    }
+
+    if (isset($print_css)){
+      echo '<style type="text/css">'."\r\n";
+      echo $print_css;
+      echo "\r\n".'</style>';
+    }
+  ?>  
 </head>
 
 <body <?php body_class(); ?>>
+
 <div id="page" class="site">
 
   <header id="masthead" class="site-header position-absolute w-100">

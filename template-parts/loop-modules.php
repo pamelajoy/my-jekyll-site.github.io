@@ -37,6 +37,7 @@ if ( have_rows( 'modules' ) ):
 
         $product_line = get_sub_field( 'product_line' );
         $featured_image = get_sub_field( 'featured_image' );
+        $gradient = get_sub_field('add_gradient');
         $text = get_sub_field('text');
         $slider = get_sub_field('slider');
 

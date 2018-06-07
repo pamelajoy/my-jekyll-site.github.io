@@ -6,4 +6,4 @@
  */
 ?>
 
-<a href="<?php echo $url; ?>" class="btn py-2 px-5" target="<?php echo $target; ?>"><?php echo $text; ?></a>
+<a href="<?php echo $url; ?>" class="btn py-2 px-5 <?php echo $btn_class; ?>" target="<?php echo $target; ?>"><?php echo $text; ?></a>

@@ -1,35 +1,40 @@
 <?php
 
-if($product_line->slug == 'sparkle'){
-  $btn_class = 'sparkle-white-btn';
-  $text_class = 'white-text';
-} elseif($product_line->slug == 'ucreate'){
-  $btn_class = 'ucreate-pink-btn';
+$btn_class = '';
+$text_class = '';
+$logo_option = '';
+$gradient_style = '';
+if($gradient){
+  $btn_class = $product_line->slug.'-white-btn';
+  $text_class = 'text-white';
+  $logo_option = 'logo-light';
+  //define gradient
+  $this_color = get_field('color', $product_line);
+  $gradient_style = 'style="background: linear-gradient( rgba(255,255,255,0),'.$this_color.' 15%,'.$this_color.' 75%, rgba(255,255,255,0) );"';
+} else{
+  $btn_class = $product_line->slug.'-color-btn';
+  $text_class = 'text-dark';
+  $logo_option = 'logo-dark';
 }
 
 ?>
-
+<!-- if gradient light logo, white text, white button -->
 <div class="product-line-grid">
   <div class="featured-image">
       <?php echo wp_get_attachment_image($featured_image, 'custom_large', '', array('class' => 'img-fluid w-100') ); ?>
   </div>
-  <div 
-    class="intro" 
-    <?php echo $product_line->name; if ($product_line->slug == 'sparkle'): $color = get_field('color', $product_line);?>
-      style="background: linear-gradient( rgba(255,255,255,0), <?php echo $color; ?> 15%, <?php echo $color; ?> 75%, rgba(255,255,255,0) );"
-    <?php endif; ?> 
-  >
+  <div class="intro" <?php echo $gradient_style; ?> >
     <div class="container mt-5">
       <div class="row">
         <div class="col-md-5">
           <?php 
-            $logo = get_field( 'logo', $product_line); 
+            $logo = get_field( $logo_option, $product_line); 
             echo wp_get_attachment_image($logo, 'medium', '', array('class' => 'img-fluid product-logo mb-4 mb-md-0') );
             
           ?>
         </div>
         <div class="offset-md-1 col-md-5">
-          <p class="p mb-5"><?php echo $text; ?></p>
+          <p class="p mb-5 <?php echo $text_class; ?>"><?php echo $text; ?></p>
           <?php
             $text = 'View '.$product_line->name.' products';
             $url = $product_line->permalink;

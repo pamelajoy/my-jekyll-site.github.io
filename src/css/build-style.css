@@ -698,11 +698,11 @@ input[type="submit"] {
   background: #706580;
   border-radius: 0;
   border: 1px solid #706580;
-  color: white !important; }
+  color: white; }
   .btn:hover {
     background: transparent;
     border: 1px solid #706580;
-    color: #706580 !important; }
+    color: #706580; }
 
 input[type="text"],
 input[type="email"],

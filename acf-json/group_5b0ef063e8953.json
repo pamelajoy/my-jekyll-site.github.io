@@ -4,8 +4,32 @@
     "fields": [
         {
             "key": "field_5b0eff25128a4",
-            "label": "Logo",
-            "name": "logo",
+            "label": "Logo Dark",
+            "name": "logo_dark",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5b188935f8cd5",
+            "label": "Logo Light",
+            "name": "logo_light",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -107,11 +131,11 @@
             ]
         },
         {
-            "key": "field_5b1593cf24e81",
+            "key": "field_5b183d61a0ad8",
             "label": "Font",
             "name": "font",
-            "type": "google_font_selector",
-            "instructions": "",
+            "type": "group",
+            "instructions": "https:\/\/fonts.google.com\/",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -119,9 +143,47 @@
                 "class": "",
                 "id": ""
             },
-            "include_web_safe_fonts": 1,
-            "enqueue_font": 1,
-            "default_font": "Montserrat"
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_5b183d72a0ad9",
+                    "label": "Embed Font",
+                    "name": "embed_font",
+                    "type": "text",
+                    "instructions": "Copy and paste this code from Google Fonts",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5b183dd1a0ada",
+                    "label": "Specify in CSS",
+                    "name": "specify_in_css",
+                    "type": "text",
+                    "instructions": "Copy and paste this CSS rule from Google Fonts",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
         }
     ],
     "location": [
@@ -141,5 +203,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1528141326
+    "modified": 1528334699
 }

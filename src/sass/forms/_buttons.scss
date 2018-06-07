@@ -27,10 +27,10 @@ input[type="submit"] {
 	background: $purple;
 	border-radius: 0;
 	border: 1px solid $purple;
-	color: white !important;
+	color: white;
 	&:hover{
 		background: transparent;
 		border: 1px solid $purple;
-		color: $purple !important;
+		color: $purple;
 	}
 }
