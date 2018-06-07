@@ -905,6 +905,10 @@ a {
 .product-logo {
   width: 100%; }
 
+.client-logo {
+  width: 100%;
+  height: 6rem; }
+
 .product-line-grid {
   display: grid;
   grid-template-rows: auto 5rem auto;

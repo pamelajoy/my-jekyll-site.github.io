@@ -45,6 +45,18 @@ if ( have_rows( 'modules' ) ):
 
         break;
 
+      case 'product_line_feature' :
+
+        $product_line = get_sub_field( 'product_line' );
+        $headline = get_sub_field('headline');
+        $text = get_sub_field('text');
+        $featured_product = get_sub_field( 'featured_product' );
+        $secondary_featured_products = get_sub_field( 'secondary_featured_product' );
+
+        include locate_template('/template-parts/template-product_line_feature.php');
+
+        break;
+
       case 'call_to_action' :
 
         $headline = get_sub_field( 'headline' );

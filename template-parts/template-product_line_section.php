@@ -7,14 +7,14 @@ $gradient_style = '';
 if($gradient){
   $btn_class = $product_line->slug.'-white-btn';
   $text_class = 'text-white';
-  $logo_option = 'logo-light';
+  $logo_option = 'logo_light';
   //define gradient
   $this_color = get_field('color', $product_line);
   $gradient_style = 'style="background: linear-gradient( rgba(255,255,255,0),'.$this_color.' 15%,'.$this_color.' 75%, rgba(255,255,255,0) );"';
 } else{
   $btn_class = $product_line->slug.'-color-btn';
   $text_class = 'text-dark';
-  $logo_option = 'logo-dark';
+  $logo_option = 'logo_dark';
 }
 
 ?>
