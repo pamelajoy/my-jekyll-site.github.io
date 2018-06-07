@@ -689,14 +689,23 @@ input[type="submit"] {
     border-color: #aaa #bbb #bbb; }
 
 .btn {
-  background: #706580;
   border-radius: 0;
-  border: 1px solid #706580;
-  color: white; }
-  .btn:hover {
+  border: 1px solid;
+  transition: 200ms; }
+
+.white-btn,
+.white-btn:active,
+.white-btn:focus,
+.white-btn:visited {
+  background: white;
+  border-color: white;
+  color: #706580; }
+  .white-btn:hover,
+  .white-btn:active:hover,
+  .white-btn:focus:hover,
+  .white-btn:visited:hover {
     background: transparent;
-    border: 1px solid #706580;
-    color: #706580; }
+    border-color: #706580; }
 
 input[type="text"],
 input[type="email"],
@@ -749,16 +758,7 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: royalblue;
   font-family: "Montserrat", sans-serifl; }
-  a:visited {
-    color: purple; }
-  a:hover, a:focus, a:active {
-    color: midnightblue; }
-  a:focus {
-    outline: thin dotted; }
-  a:hover, a:active {
-    outline: 0; }
 
 /*--------------------------------------------------------------
 ## Menus
@@ -959,7 +959,8 @@ a {
     content: '';
     color: #706580;
     margin: 0 1rem;
-    opacity: .75; }
+    opacity: .75;
+    transition: 200ms; }
     @media (min-width: 768px) {
       .slick-next:before, .slick-next:after, .slick-prev:before, .slick-prev:after {
         margin: 0 2rem; } }

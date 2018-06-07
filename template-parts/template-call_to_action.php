@@ -3,6 +3,7 @@
 $text = $button['title'];
 $url = $button['url'];
 $target = $linkArray['target'];
+$btn_class = 'white-btn';
 ?>
 
 <div class="py-5 light-gray-bg">

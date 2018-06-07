@@ -22,15 +22,21 @@ input[type="submit"] {
 }
 
 
-
 .btn{
-	background: $purple;
 	border-radius: 0;
-	border: 1px solid $purple;
-	color: white;
+	border: 1px solid;
+	transition: 200ms; 
+}
+.white-btn,
+.white-btn:active,
+.white-btn:focus,
+.white-btn:visited{
+	background: white;
+	border-color:white;
+	color: $purple;
+	
 	&:hover{
 		background: transparent;
-		border: 1px solid $purple;
-		color: $purple;
+		border-color: $purple;
 	}
 }

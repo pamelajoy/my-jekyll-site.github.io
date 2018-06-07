@@ -30,7 +30,10 @@ foreach($terms as $term):
   if ($color){
     //create button classes
     $css = 
-      '.'.$term->slug.'-color-btn{
+      '.'.$term->slug.'-color-btn,
+      .'.$term->slug.'-color-btn:active,
+      .'.$term->slug.'-color-btn:focus,
+      .'.$term->slug.'-color-btn:visited{
         background-color:'.$color.';
         border-color:'.$color.';
         color:white;
@@ -40,7 +43,10 @@ foreach($terms as $term):
         color:'.$color.';
       }'."\r\n";
     $css .= 
-      '.'.$term->slug.'-white-btn{
+      '.'.$term->slug.'-white-btn,
+      .'.$term->slug.'-white-btn:active,
+      .'.$term->slug.'-white-btn:focus,
+      .'.$term->slug.'-white-btn:visited{
         background-color:white;
         border-color:white;
         color:'.$color.'

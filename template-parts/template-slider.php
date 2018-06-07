@@ -1,4 +1,5 @@
 <div class="slider mb-5 pb-5 <?php echo $product_line->slug.'-slider'; ?>">
+  <!-- SET DEFAULT PREV AND NEXT BUTTON IMAGES -->
   <?php 
 
     if( $slider ):
