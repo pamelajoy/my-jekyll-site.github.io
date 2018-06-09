@@ -38,8 +38,11 @@ foreach($terms as $term):
         border-color:'.$color.';
         color:white;
       }'."\r\n".
+      '.'.$term->slug.'-color-btn.outline-inward:before{
+        -webkit-box-shadow: 0 0 2rem'.$color.';
+      }'."\r\n".
       '.'.$term->slug.'-color-btn:hover{
-        background-color:transparent;
+        background-color:white;
         color:'.$color.';
       }'."\r\n";
     $css .= 
@@ -85,50 +88,50 @@ endforeach;
 
 <div id="page" class="site">
 
-  <header id="masthead" class="site-header position-absolute w-100">
+  <header id="masthead" class="site-header">
 
-    <nav id="site-navigation" class="main-navigation navbar navbar-expand-lg p-0" style="overflow:hidden;">
-        <div class="fixed-top site-branding align-self-start pr-5 pt-3">
-          <div class="container">
-            	<div>
-              <?php
-                // check to see if the logo exists and add it to the page
-                if ( has_custom_logo() ) :
+    <nav id="site-navigation" class="fixed-top main-navigation navbar navbar-expand-lg p-0" style="overflow:hidden;">
+        <div class="container position-relative p-0">
+          <div class="site-branding align-self-start pr-5 py-3">
+            <?php
+              // check to see if the logo exists and add it to the page
+              if ( has_custom_logo() ) :
 
-                  echo the_custom_logo();
+                echo the_custom_logo();
 
-                else :
-              ?>
-                 
-                <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
-                 
-              <?php 
-                endif; 
-              ?>
-            	</div>
+              else :
+            ?>
+               
+              <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+               
+            <?php 
+              endif; 
+            ?>
+          </div><!-- .site-branding -->
+
+          <div class="d-lg-none d-flex m-5 align-self-start justify-self-end nav-bg">
+              <button class="navbar-toggler d-flex justify-content-end d-lg-none p-3" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars white-text"></i>
+              </button><!-- .navbar-toggler -->
           </div>
-        </div><!-- .site-branding -->
 
-        <div class="fixed-top d-lg-none d-flex m-5 align-self-start justify-self-end nav-bg">
-            <button class="navbar-toggler d-flex justify-content-end d-lg-none p-3" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
-              <i class="fa fa-bars white-text"></i>
-            </button><!-- .navbar-toggler -->
+          <div class="nav-bg w-100">
+          <?php
+            wp_nav_menu( array(
+              'container'       => 'div',
+              'container_class' => 'collapse navbar-collapse d-lg-flex align-self-end py-3',
+              'container_id'    => 'menu',
+              'depth'           => 2,
+              'fallback_cb'     => 'bs4navwalker::fallback',
+              'menu'            => 'primary',
+              'menu_class'      => 'navbar-nav align-items-center justify-content-around m-0 ml-lg-5',
+              'menu_id'         => false,
+              'theme_location'  => 'menu-1',
+              'walker'          => new bs4navwalker()
+            ) );
+          ?>
         </div>
-        <div class="container" style="margin-top:90vh">
-        <?php
-          wp_nav_menu( array(
-            'container'       => 'div',
-            'container_class' => 'collapse navbar-collapse d-lg-flex align-self-end row',
-            'container_id'    => 'menu',
-            'depth'           => 2,
-            'fallback_cb'     => 'bs4navwalker::fallback',
-            'menu'            => 'primary',
-            'menu_class'      => 'navbar-nav col-8 ml-auto nav-bg align-items-center justify-content-around',
-            'menu_id'         => false,
-            'theme_location'  => 'menu-1',
-            'walker'          => new bs4navwalker()
-          ) );
-        ?>
+
       </div>
         
         

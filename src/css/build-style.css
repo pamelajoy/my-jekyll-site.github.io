@@ -696,8 +696,7 @@ input[type="submit"] {
 
 .btn {
   border-radius: 0;
-  border: 1px solid;
-  transition: 200ms; }
+  border: 1px solid; }
 
 .white-btn,
 .white-btn:active,
@@ -712,6 +711,36 @@ input[type="submit"] {
   .white-btn:visited:hover {
     background: transparent;
     border-color: #706580; }
+
+.outline-inward {
+  display: inline-block;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  transition-duration: .3s; }
+
+.outline-inward:before {
+  content: '';
+  position: absolute;
+  -webkit-box-shadow: 0 0 2rem white;
+  top: -8px;
+  right: -8px;
+  bottom: -8px;
+  left: -8px;
+  opacity: 0;
+  transition-duration: .3s;
+  transition-property: top right bottom left; }
+
+.outline-inward:hover:before {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 1; }
+
+.white-btn.outline-inward:before {
+  -webkit-box-shadow: 0 0 2rem rgba(112, 101, 128, 0.5); }
 
 input[type="text"],
 input[type="email"],
@@ -772,19 +801,41 @@ a {
 .custom-logo {
   width: 100%; }
 
-#menu:after {
-  content: '';
-  height: 10vh;
-  width: 100%;
-  margin-right: -100%;
-  background: #79c4db; }
-
-#menu .navbar-nav {
-  height: 10vh; }
-
 .menu-item a {
   color: white;
   text-transform: uppercase; }
+
+.navbar .container {
+  background-color: transparent;
+  transition: background-color 200ms; }
+
+.navbar .container:before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  margin-left: -100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: transparent;
+  transition: background-color 200ms; }
+
+.navbar .container:after {
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  margin-right: -100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: blue; }
+
+.add-bg-color {
+  background-color: blue !important; }
+  .add-bg-color:before {
+    background-color: blue !important; }
 
 /*--------------------------------------------------------------
 # Accessibility

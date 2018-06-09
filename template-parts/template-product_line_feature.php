@@ -1,6 +1,7 @@
 <?php
   $this_color = get_field('color', $product_line);
-  $gradient_style = 'style="background: linear-gradient( rgba(255,255,255,0),'.$this_color.' 50%, rgba(255,255,255,0) );"';
+  // Add 00 to the end of the hex code to give 50% opacity -> $this_color.'80'
+  $gradient_style = 'style="background: linear-gradient( rgba(255,255,255,0),'.$this_color.'80 50%, rgba(255,255,255,0) );"';
 ?>
 <!-- if gradient light logo, white text, white button -->
 <div class="feature-product-line">

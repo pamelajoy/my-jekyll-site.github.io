@@ -2,19 +2,44 @@
 	width: 100%;
 }
 
-#menu:after {
-    content: '';
-    height: 10vh;
-    width: 100%;
-    margin-right: -100%;
-    background: #79c4db;
-}
-
-#menu .navbar-nav{
-	height: 10vh;
-}
-
 .menu-item a{
 	color: white;
 	text-transform: uppercase;;
+}
+
+.navbar .container{
+  background-color: transparent;
+  transition: background-color 200ms;
+}
+
+.navbar .container:before{
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  margin-left: -100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: transparent;
+  transition: background-color 200ms;
+  }
+
+.navbar .container:after{
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  margin-right: -100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: blue;
+}
+
+.add-bg-color{
+  background-color:blue !important;
+  &:before{
+    background-color: blue !important;
+  }
 }
