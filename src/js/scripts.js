@@ -49,5 +49,23 @@ jQuery(document).ready(function($) {
     initialSlide: 1,
   });
 
+  var distance = $('.navbar-bottom').offset().top,
+  $window = $(window);
+
+  $window.scroll(function() {
+      if ( $window.scrollTop() >= distance ) {
+        console.log('hi');
+         $('.navbar-bottom').addClass('d-none');
+         $('.navbar-top .nav-bg').css('visibility', 'visible');
+         $('.navbar-top .nav-bg').css('opacity', '1');
+         $('.navbar-top .container').addClass('add-bg-color');
+      } else {
+        $('.navbar-bottom').removeClass('d-none');
+        $('.navbar-top .nav-bg').css('visibility', 'hidden');
+         $('.navbar-top .nav-bg').css('opacity', '0');
+         $('.navbar-top .container').removeClass('add-bg-color');
+      }
+  });
+
     
 });

@@ -830,12 +830,26 @@ a {
   top: 0;
   right: 0;
   bottom: 0;
-  background: blue; }
+  background-color: transparent;
+  transition: background-color 200ms; }
+
+.navbar-bottom .container:after {
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  margin-right: -100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #79c4db; }
 
 .add-bg-color {
-  background-color: blue !important; }
+  background-color: #79c4db !important; }
   .add-bg-color:before {
-    background-color: blue !important; }
+    background-color: #79c4db !important; }
+  .add-bg-color:after {
+    background-color: #79c4db !important; }
 
 /*--------------------------------------------------------------
 # Accessibility

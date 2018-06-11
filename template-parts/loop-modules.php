@@ -14,13 +14,13 @@ if ( have_rows( 'modules' ) ):
 
     switch ( get_row_layout() ) {
 
-      case 'header' :
-        $image = get_sub_field( 'image' );
-        $text_overlay= get_sub_field( 'text_overlay' );
+      // case 'header' :
+      //   $image = get_sub_field( 'image' );
+      //   $text_overlay= get_sub_field( 'text_overlay' );
 
-        include locate_template('/template-parts/template-header.php');
+      //   include locate_template('/template-parts/template-header.php');
 
-        break;
+      //   break;
 
       case 'page_overview' :
 

@@ -90,8 +90,8 @@ endforeach;
 
   <header id="masthead" class="site-header">
 
-    <nav id="site-navigation" class="fixed-top main-navigation navbar navbar-expand-lg p-0" style="overflow:hidden;">
-        <div class="container position-relative p-0">
+    <nav id="site-navigation" class="fixed-top main-navigation navbar navbar-top navbar-expand-lg p-0" style="overflow:hidden;">
+        <div class="container p-0 position-relative">
           <div class="site-branding align-self-start pr-5 py-3">
             <?php
               // check to see if the logo exists and add it to the page
@@ -115,7 +115,7 @@ endforeach;
               </button><!-- .navbar-toggler -->
           </div>
 
-          <div class="nav-bg w-100">
+          <div class="nav-bg w-100" style="visibility: hidden; opacity: 0;">
           <?php
             wp_nav_menu( array(
               'container'       => 'div',
@@ -133,10 +133,63 @@ endforeach;
         </div>
 
       </div>
-        
-        
-      </div>
+
     </nav><!-- #site-navigation -->
+
+    <?php
+
+      if ( have_rows( 'modules' ) ):
+
+        // loop through the rows of data
+        while ( have_rows( 'modules' ) ) : the_row();
+
+          if( get_row_layout() == 'header' ) {
+            $image = get_sub_field( 'image' );
+            $text_overlay= get_sub_field( 'text_overlay' );
+
+            include locate_template('/template-parts/template-header.php');
+          }
+        endwhile;
+      endif;
+    ?>
+
+
+    <nav id="site-navigation" class="main-navigation navbar navbar-bottom navbar-expand-lg p-0" style="overflow:hidden;">
+      <div class="container p-0 position-relative">
+          <div class="site-branding align-self-start pr-5 py-3" style="visibility: hidden;">
+              <?php
+                // check to see if the logo exists and add it to the page
+                if ( has_custom_logo() ) :
+
+                  echo the_custom_logo();
+
+                else :
+              ?>
+                 
+                <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+                 
+              <?php 
+                endif; 
+              ?>
+            </div><!-- .site-branding -->
+          <div class="nav-bg w-100">
+            <?php
+              wp_nav_menu( array(
+                'container'       => 'div',
+                'container_class' => 'collapse navbar-collapse d-lg-flex align-self-end py-3',
+                'container_id'    => 'menu',
+                'depth'           => 2,
+                'fallback_cb'     => 'bs4navwalker::fallback',
+                'menu'            => 'primary',
+                'menu_class'      => 'navbar-nav align-items-center justify-content-around m-0 ml-lg-5',
+                'menu_id'         => false,
+                'theme_location'  => 'menu-1',
+                'walker'          => new bs4navwalker()
+              ) );
+            ?>
+          </div>
+      </div>
+    </nav>
 
   </header><!-- #masthead -->
   
