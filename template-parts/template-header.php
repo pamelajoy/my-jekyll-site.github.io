@@ -8,7 +8,13 @@
 			<div class="row no-gutters" style="height:100%;">
 				<div class="col-md-8 d-flex align-items-end mb-5 pb-5" style="height:100%;">
 					<div class="mb-5 pb-5 w-100">
-						<?php echo wp_get_attachment_image($text_overlay, 'full', '', array('class' => 'img-fluid w-100')); ?>
+						<?php 
+							if($text_overlay){
+								echo wp_get_attachment_image($text_overlay, 'full', '', array('class' => 'img-fluid w-100'));
+							} else {
+								the_title();
+							}
+						?>
 					</div>
 				</div>
 			</div>

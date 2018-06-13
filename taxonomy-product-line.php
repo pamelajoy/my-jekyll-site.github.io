@@ -30,3 +30,5 @@ $logo_light = get_field('logo_light', $queried_object);
 		</div>
 	</div>
 </div>
+
+<?php get_footer();?>

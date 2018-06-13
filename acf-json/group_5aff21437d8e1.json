@@ -3,7 +3,7 @@
     "title": "Media Custom Fields",
     "fields": [
         {
-            "key": "field_5aff214fb7924",
+            "key": "field_5aff214fb7924__trashed",
             "label": "Media Categories",
             "name": "media_categories",
             "type": "taxonomy",
@@ -42,5 +42,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1526669702
+    "modified": 1528833169
 }

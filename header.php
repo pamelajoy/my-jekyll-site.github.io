@@ -94,18 +94,38 @@ endforeach;
         <div class="container p-0 position-relative">
           <div class="site-branding align-self-start pr-5 py-3">
             <?php
+              //check if there is a featured image
+              if( has_post_thumbnail() ){
               // check to see if the logo exists and add it to the page
-              if ( has_custom_logo() ) :
+                if ( has_custom_logo() ) :
 
-                echo the_custom_logo();
+                  echo the_custom_logo();
 
-              else :
+                else :
+                // add a fallback if the logo doesn't exist
             ?>
-               
-              <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
-               
+                <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+                 
             <?php 
-              endif; 
+                endif;
+
+              }else {
+
+                // check to see if the logo exists and add it to the page
+                if ( get_theme_mod( 'alt_logo' ) ) :
+            ?>
+              <a href="#">
+                <img src="<?php echo get_theme_mod( 'alt_logo' ); ?>" class="custom-logo" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" >
+              </a>
+                 
+            <?php
+                else : 
+                // add a fallback if the logo doesn't exist
+            ?>
+                <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+            <?php
+                endif;
+              }
             ?>
           </div><!-- .site-branding -->
 
@@ -137,41 +157,35 @@ endforeach;
     </nav><!-- #site-navigation -->
 
     <?php
+    if (has_post_thumbnail()){
+      $image = get_post_thumbnail_id();
+      $text_overlay= get_field( 'text_image_overlay' );
 
-      if ( have_rows( 'modules' ) ):
+      include locate_template('/template-parts/template-header.php');
+    }
 
-        // loop through the rows of data
-        while ( have_rows( 'modules' ) ) : the_row();
-
-          if( get_row_layout() == 'header' ) {
-            $image = get_sub_field( 'image' );
-            $text_overlay= get_sub_field( 'text_overlay' );
-
-            include locate_template('/template-parts/template-header.php');
-          }
-        endwhile;
-      endif;
     ?>
+
 
 
     <nav id="site-navigation" class="main-navigation navbar navbar-bottom navbar-expand-lg p-0" style="overflow:hidden;">
       <div class="container p-0 position-relative">
           <div class="site-branding align-self-start pr-5 py-3" style="visibility: hidden;">
-              <?php
-                // check to see if the logo exists and add it to the page
-                if ( has_custom_logo() ) :
+            <?php
+              // check to see if the logo exists and add it to the page
+              if ( has_custom_logo() ) :
 
-                  echo the_custom_logo();
+                echo the_custom_logo();
 
-                else :
-              ?>
-                 
-                <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
-                 
-              <?php 
-                endif; 
-              ?>
-            </div><!-- .site-branding -->
+              else :
+            ?>
+               
+              <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+               
+            <?php 
+              endif; 
+            ?>
+          </div><!-- .site-branding -->
           <div class="nav-bg w-100">
             <?php
               wp_nav_menu( array(
@@ -195,3 +209,4 @@ endforeach;
   
   
   <div id="content" class="site-content">
+

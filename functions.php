@@ -31,7 +31,10 @@ add_action( 'wp_enqueue_scripts', 'tq_custom_script_init' );
  * Register Custom Post Types
  */
 require get_stylesheet_directory().'/inc/custom-post-types.php';
-
+/**
+* Customizer additions.
+*/
+require get_stylesheet_directory(). '/inc/customizer.php';
 /**
  * Register ACF Pro Fields with PHP
  */
@@ -41,7 +44,17 @@ require get_stylesheet_directory().'/inc/acf-init.php';
  * Add ACF Pro Options page
  */
 if( function_exists('acf_add_options_page') ) {
-	acf_add_options_page();	
+	acf_add_options_page();
+	acf_add_options_page(array(
+        'page_title'    => 'Products Options',
+        'menu_title'    => 'Products Options',
+        'menu_slug'     => 'options_products',
+        'capability'    => 'edit_posts',
+        'parent_slug'   => 'edit.php?post_type=products',
+        'position'      => false,
+        'icon_url'      => 'dashicons-images-alt2',
+        'redirect'      => false,
+    ));
 }
 
 
