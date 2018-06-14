@@ -56,26 +56,3 @@ if( function_exists('acf_add_options_page') ) {
         'redirect'      => false,
     ));
 }
-
-
-// This allows you to only view images you added to the media library, I plan to repurpose this using the category
-// add_filter( 'ajax_query_attachments_args', array( $this, 'load_media_library_by_category_access' ), 10, 1 );
-
-// function load_media_library_by_category_access( $query = array() ) {
-//    $user_id = get_current_user_id();
-//    if( $user_id ) {
-//       $query['author'] = $user_id;
-//    }
-
-//    return $query;
-// }
-
-// This should 
-// function author_filter($query) {
-//     if ( is_admin() && $query->is_main_query() ) {
-//         if (isset($_GET['author']) && $_GET['author'] == -1) {
-//             $query->set('author', '');
-//         }
-//     }
-// }
-// add_action('pre_get_posts','author_filter');

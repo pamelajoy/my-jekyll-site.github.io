@@ -1,12 +1,12 @@
 {
-    "key": "group_5aff21437d8e1",
-    "title": "Media Custom Fields",
+    "key": "group_5b21341494ce7",
+    "title": "Products Fields",
     "fields": [
         {
-            "key": "field_5aff214fb7924__trashed",
-            "label": "Media Categories",
-            "name": "media_categories",
-            "type": "taxonomy",
+            "key": "field_5b215b3c2ee13",
+            "label": "Featured Image",
+            "name": "featured_image",
+            "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,22 +15,24 @@
                 "class": "",
                 "id": ""
             },
-            "taxonomy": "product-line",
-            "field_type": "radio",
-            "allow_null": 0,
-            "add_term": 0,
-            "save_terms": 0,
-            "load_terms": 0,
             "return_format": "id",
-            "multiple": 0
+            "preview_size": "large",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         }
     ],
     "location": [
         [
             {
-                "param": "attachment",
+                "param": "options_page",
                 "operator": "==",
-                "value": "all"
+                "value": "options_products"
             }
         ]
     ],
@@ -42,5 +44,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1528833169
+    "modified": 1528918654
 }

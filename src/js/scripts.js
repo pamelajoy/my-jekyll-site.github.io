@@ -54,7 +54,6 @@ jQuery(document).ready(function($) {
 
   $window.scroll(function() {
       if ( $window.scrollTop() >= distance ) {
-        console.log('hi');
          $('.navbar-bottom').addClass('d-none');
          $('.navbar-top .nav-bg').css('visibility', 'visible');
          $('.navbar-top .nav-bg').css('opacity', '1');

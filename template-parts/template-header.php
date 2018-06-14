@@ -1,5 +1,9 @@
 <?php
 
+if (is_post_type_archive( 'products' )){
+	$image = get_field('featured_image', 'option');
+};
+
 ?>
 
 <div style="height:90vh">

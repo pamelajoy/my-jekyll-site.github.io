@@ -1,6 +1,6 @@
 {
     "key": "group_5b0ef063e8953",
-    "title": "Product Line",
+    "title": "Product Line Fields",
     "fields": [
         {
             "key": "field_5b0eff25128a4",
@@ -265,5 +265,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1528408116
+    "modified": 1528919460
 }
