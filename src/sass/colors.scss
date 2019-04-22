@@ -1,3 +1,130 @@
 $vistablue: #8ED99E;
 $saffron: #F3C041;
 $punch: #DB3D2E;
+
+$colors: (
+    primary: $vistablue,
+    secondary: $saffron,
+    tertiary: $punch,
+    dark: black,
+    light: white,
+);
+
+@mixin button($value) {
+  background-color: $value;
+  border-color: $value;
+  color: white;
+   &:hover, &:focus{
+     background-color: darken($value, 13.5%);
+     border-color: darken($value, 13.5%);
+     color: white;
+  }
+}
+@mixin icon-button($value){
+  @include button($value);
+  &:hover, &:focus{
+    svg{
+      fill: white;
+    }
+  }
+}
+@mixin inverse-button($value) {
+  background-color: white;
+  border-color: white;
+  color: $value;
+   &:hover, &:focus{
+    background-color: $value;
+    border-color: $value;
+    color: white;
+  }
+}
+@mixin inverse-icon-button($value){
+  @include inverse-button($value);
+  &:hover, &:focus{
+    svg{
+      fill: white;
+    }
+  }
+}
+@mixin ghost-button($value) {
+  background-color: transparent;
+  border-color: $value;
+  color: $value;
+   &:hover, &:focus{
+    background-color: $value;
+    border-color: $value;
+    color: white;
+  }
+}
+@mixin ghost-icon-button($value){
+  @include ghost-button($value);
+  &:hover, &:focus{
+    svg{
+      fill: white;
+    }
+  }
+}
+@mixin inverse-ghost-button($value) {
+  background-color: transparent;
+  border-color: white;
+  color: white;
+   &:hover, &:focus{
+    background-color: white;
+    border-color: white;
+    color: $value;
+  }
+}
+@mixin inverse-ghost-icon-button($value){
+  @include inverse-ghost-button($value);
+  &:hover, &:focus{
+    svg{
+      fill: $value;
+    }
+  }
+}
+
+@each $name, $value in $colors {
+  .text--#{$name} {
+    color: $value;
+  }
+  .bg--#{$name} {
+    background-color: $value;
+  }
+  .fill--#{$name} {
+    fill: $value;
+    transition: $speedBase $easeBase;
+    svg{
+      fill: $value;
+      transition: $speedBase $easeBase;
+    }
+  }
+  .hover--#{$name}{
+    &:hover{
+      fill: $value;
+    }
+  }
+  .button--#{$name}{
+    @include button($value);
+  }
+  .icon-button--#{$name}{
+    @include icon-button($value);
+  }
+  .inverse-button--#{$name}{
+    @include inverse-button($value);
+  }
+  .inverse-icon-button--#{$name}{
+    @include inverse-icon-button($value);
+  }
+  .ghost-button--#{$name}{
+    @include ghost-button($value);
+  }
+  .ghost-icon-button--#{$name}{
+    @include ghost-icon-button($value);
+  }
+  .inverse-ghost-button--#{$name}{
+    @include inverse-ghost-button($value);
+  }
+  .inverse-ghost-icon-button--#{$name}{
+    @include inverse-ghost-icon-button($value);
+  }
+}
