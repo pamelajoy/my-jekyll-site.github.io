@@ -2,3 +2,5 @@ node_modules
 .sass-cache
 .gitignore
 node_modules/
+_site
+.jekyll-metadata

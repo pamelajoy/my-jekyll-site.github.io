@@ -1,0 +1,19 @@
+---
+layout: default
+title: Artists
+permalink: /artists/
+bg-color: tertiary
+---
+<section class="py-4 d-inline-flex js-tickerWrapper" style="overflow: hidden; width: 100%;">
+  <div class="animate-ticker js-ticker">
+    <h3 class="h3 text-uppercase">{{page.title}}&nbsp;</h3>
+  </div>
+</section>
+<section class="container d-flex flex-wrap my-5">
+  {% include album.html %}
+  {% include album.html %}
+  {% include album.html %}
+  {% include album.html %}
+  {% include album.html %}
+  {% include album.html %}
+</section>

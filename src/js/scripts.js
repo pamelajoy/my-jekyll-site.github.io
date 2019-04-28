@@ -1,14 +1,15 @@
 // primary javascript file
 jQuery(document).ready(function($) {
-});
-var tickerWrapper = $('.js-ticker');
-console.log(tickerWrapper);
+  var tickerWrapper = $('.js-ticker');
+  tickerWrapper.each(function(){
+    var tickerText = $(this).parent().html();
+    var newContent = "";
+    var count = 20;
+    for (var i = 0; i < count; i++){
+      newContent += tickerText;
+    }
+    var parent = $(this).parent();
+    parent.append(newContent);
 
-tickerWrapper.each(function(element) {
-  var tickerTextNode = $(this).find('h3');
-  var tickerText = tickerTextNode.text();
-  var times = 40;
-  for(var i=0; i < times; i++){
-    tickerTextNode.append(" " + tickerText);
-  }
+  });
 });
