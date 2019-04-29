@@ -490,8 +490,15 @@
     fill: white; }
 
 * {
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  letter-spacing: -.025em; }
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif; }
+
+.p {
+  letter-spacing: -.025rem;
+  font-weight: normal; }
+  .p .bigger {
+    font-size: 1.5rem; }
+  .p .smaller {
+    font-size: 1rem; }
 
 .btn {
   border-radius: 0 25px 0 0;

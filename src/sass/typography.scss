@@ -1,4 +1,14 @@
 *{
 	font-family: $font-stack;
-	letter-spacing: -.025em;
+}
+
+.p{
+	letter-spacing: -.025rem;
+	font-weight: normal;
+	.bigger{
+		font-size: 1.5rem;
+	}
+	.smaller{
+		font-size: 1rem;
+	}
 }
